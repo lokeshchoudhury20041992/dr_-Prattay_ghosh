@@ -427,164 +427,185 @@ const App = () => {
             </header>
             
             {/* 2. Hero Section */}
-            <div className="relative">
-                <section className={`relative overflow-hidden ${heroHeight} flex`}>
-                    {/* Left Side: Dark Blue/Navy (Contains all text) */}
-                    <div className={`w-full lg:w-1/2 ${darkSideBg} relative flex flex-col justify-center items-center p-8 lg:p-16`}>
-                        <Activity size={80} strokeWidth={1} className="text-white opacity-20 absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 lg:block hidden" />
-                        <Stethoscope size={64} strokeWidth={1} className="text-white opacity-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block hidden" />
+<div className="relative">
+    {/* Header REMOVED as requested */}
 
-                        <div className="relative z-10 text-center lg:text-right w-full">
-                            
-                            <h1 className="font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extralight text-white leading-none mb-2 mt-20 lg:mt-0">
-                                Your Diabetes
-                            </h1>
-                            
-                            <p className="font-raleway text-xl sm:text-2xl font-medium text-white/90 mb-6 uppercase tracking-widest">
-                                {DOCTOR_NAME}
-                            </p>
-                            
-                            <h1 className={`font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extrabold text-white leading-none mb-4 lg:pt-0`}> 
-                                Expert<span className={secondaryColor}>.</span>
-                            </h1>
-                            
-                        </div>
-                    </div>
-                    
-                    {/* Right Side: Image background with overlaid content */}
-                    <div className={`w-full lg:w-1/2 bg-white relative flex flex-col justify-center items-center`}>
-                        
-                        {/* Image Container (Fills the entire right panel) */}
-                        <div className="absolute inset-0 w-full h-full overflow-hidden flex justify-center items-center">
-                            <img
-                                src={doctorImage}
-                                alt={`${DOCTOR_NAME}, ${SPECIALIZATION} Expert`}
-                                className="w-full h-full object-contain filter brightness-[0.85] transition duration-500 hover:brightness-[0.9]"
-                                onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x800/228B93/ffffff?text=Doctor+Ghosh"; }}
-                            />
-                             <div className="absolute inset-0 bg-black opacity-10"></div>
-                        </div>
+    {/* CHANGE 1: Replacing ${heroHeight} with a smaller responsive height (e.g., h-auto min-h-[60vh] lg:min-h-[70vh]) */}
+    <section className={`relative overflow-hidden h-auto min-h-[60vh] lg:min-h-[70vh] flex flex-col lg:flex-row`}>
 
-                        {/* Overlaid Content Container */}
-                        <div className="relative z-10 w-full p-8 lg:p-16 flex flex-col justify-end items-center text-center h-full">
-                            
-                            <div className="w-full max-w-sm lg:max-w-xl mt-auto mb-0 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-2xl"> 
-                                
-                                <div className="space-y-3 w-full mb-6">
-                                    <div className="flex items-center space-x-2 justify-center"> 
-                                        <Droplet size={20} className={primaryColor}/>
-                                        <p className="font-raleway text-base uppercase tracking-wider text-gray-700 font-medium">
-                                            10,000+ Patients Treated in {LOCATION}
-                                        </p>
-                                    </div>
-                                    
-                                    <div className="flex items-center space-x-2 justify-center">
-                                        <Stethoscope size={20} className={primaryColor} />
-                                        <p className="text-gray-700 font-raleway text-base text-left">
-                                            Personalized Type 1, 2, and Gestational Diabetes Care
-                                        </p>
-                                    </div>
-                                    
-                                    <div className="flex items-center space-x-2 justify-center">
-                                        <MapPin size={20} className={primaryColor} />
-                                        <p className="text-gray-700 font-raleway text-base text-left">
-                                            In-Clinic and Online Consultations available.
-                                        </p>
-                                    </div>
-                                </div>
+        {/* Left Side: Dark Blue/Navy (Contains all text) - TOP SECTION on mobile */}
+        {/* Removed lg:h-full from dark side for better responsiveness with min-h property */}
+        <div className={`w-full lg:w-1/2 ${darkSideBg} relative flex flex-col justify-center items-center p-8 lg:p-16`}>
 
-                                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full"> 
-                                    <a href={APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" 
-                                        className={`font-playfair w-full text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-[1.02] text-center ${accentBg} ${accentHover} flex items-center justify-center`}
-                                    >
-                                        <CalendarCheck size={20} className="mr-2"/> BOOK ONLINE
-                                    </a>
-                                    <a href={`tel:${doctorData.phone}`} 
-                                        className={`font-raleway flex items-center justify-center space-x-2 text-gray-700 font-medium transition duration-300 border border-gray-300 px-6 py-3 rounded-full hover:shadow-md bg-white w-full`}
-                                    > 
-                                        <Phone size={20} className={primaryColor}/>
-                                        <span>Call: {doctorData.phone}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            {/* Background Icons (Hidden on mobile) */}
+            <Activity size={80} strokeWidth={1} className="text-white opacity-20 absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block" />
+            <Stethoscope size={64} strokeWidth={1} className="text-white opacity-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block" />
+
+            <div className="relative z-10 text-center lg:text-right w-full">
+                {/* Text: Your Diabetes */}
+                <h1 className="font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extralight text-white leading-none mb-2 mt-20 lg:mt-0">
+                    Your Diabetes
+                </h1>
+
+                {/* Text: Dr. Prattay Ghosh */}
+                <p className="font-raleway text-xl sm:text-2xl font-medium text-white/90 mb-6 uppercase tracking-widest">
+                    {DOCTOR_NAME}
+                </p>
+
+                {/* Text: Expert. */}
+                <h1 className={`font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extrabold text-white leading-none mb-4 lg:pt-0`}>
+                    Expert<span className={secondaryColor}>.</span>
+                </h1>
             </div>
+        </div>
+
+        {/* Right Side: Image background with overlaid content - BOTTOM SECTION on mobile */}
+        {/* Removed -mt-20 here to eliminate the overlap */}
+        <div className={`w-full lg:w-1/2 bg-white relative flex flex-col justify-start items-center`}>
+
+            {/* CHANGE 2: Reducing the image container height on mobile from h-[50vh] to h-[40vh] */}
+            <div className="w-full h-[40vh] lg:h-full overflow-hidden flex justify-center items-start relative">
+                <img
+                    src={doctorImage}
+                    alt={`${DOCTOR_NAME}, ${SPECIALIZATION} Expert`}
+                    // Use object-contain to ensure the whole image is visible
+                    className="w-full h-full object-contain filter brightness-[0.85] transition duration-500 hover:brightness-[0.9]"
+                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x800/228B93/ffffff?text=Doctor+Ghosh"; }}
+                />
+                <div className="absolute inset-0 bg-black opacity-10"></div>
+            </div>
+
+            {/* Overlaid Content Container (The white card - now positioned below the image) */}
+            {/* Removed justify-end and added margin for separation */}
+            <div className="relative z-10 w-full p-8 flex flex-col justify-start items-center text-center -mt-16 lg:mt-0">
+
+                {/* *** Key Mobile Change: Removed mt-auto mb-0 and added negative margin for slight visual connection *** */}
+                <div className="w-full max-w-sm lg:max-w-xl bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-2xl">
+
+                    <div className="space-y-3 w-full mb-6">
+                        {/* 10,000+ Patients */}
+                        <div className="flex items-center space-x-2 justify-center">
+                            <Droplet size={20} className={primaryColor}/>
+                            <p className="font-raleway text-base uppercase tracking-wider text-gray-700 font-medium">
+                                10,000+ Patients Treated in {LOCATION}
+                            </p>
+                        </div>
+
+                        {/* Personalized Care */}
+                        <div className="flex items-center space-x-2 justify-center">
+                            <Stethoscope size={20} className={primaryColor} />
+                            <p className="text-gray-700 font-raleway text-base text-left">
+                                Personalized Type 1, 2, and Gestational Diabetes Care
+                            </p>
+                        </div>
+
+                        {/* Location/Consultations */}
+                        <div className="flex items-center space-x-2 justify-center">
+                            <MapPin size={20} className={primaryColor} />
+                            <p className="text-gray-700 font-raleway text-base text-left">
+                                In-Clinic and Online Consultations available.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+                        {/* BOOK ONLINE Button */}
+                        <a href={APPOINTMENT_URL} target="_blank" rel="noopener noreferrer"
+                            className={`font-playfair w-full text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-[1.02] text-center ${accentBg} ${accentHover} flex items-center justify-center`}
+                        >
+                            <CalendarCheck size={20} className="mr-2"/> BOOK ONLINE
+                        </a>
+
+                        {/* Call Button */}
+                        <a href={`tel:${doctorData.phone}`}
+                            className={`font-raleway flex items-center justify-center space-x-2 text-gray-700 font-medium transition duration-300 border border-gray-300 px-6 py-3 rounded-full hover:shadow-md bg-white w-full`}
+                        >
+                            <Phone size={20} className={primaryColor}/>
+                            <span>Call: {doctorData.phone}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
             
             {/* 3. About Section (RE-DESIGNED) */}
             <section id="about" className={`py-16 px-4 sm:px-8 lg:px-16 bg-white`}>
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                    
-                    {/* LEFT COLUMN: BIO Content */}
-                    <div className="lg:col-span-2 space-y-8 flex flex-col lg:h-full order-2 lg:order-1">
-                        
-                        <div className={`bg-white rounded-3xl p-0 flex-grow`}>
-                            <h2 className="font-playfair text-4xl font-extrabold mb-4">
-                                About Dr. Ghosh
-                            </h2>
-                            <p className={`font-raleway font-semibold text-xl text-gray-700 mb-6`}>
-                                {doctorData.introBio}
-                            </p>
-                            <p className="font-raleway text-base text-gray-700 leading-relaxed mb-4">
-                                {doctorData.mainBio[0]}
-                            </p>
-                             <p className="font-raleway text-base text-gray-700 leading-relaxed">
-                                {doctorData.mainBio[1]}
-                            </p>
-                        </div>
-                        
-                        {/* Collaboration/Services Snapshot (Retained for detail) */}
-                        <div className={`bg-gray-50 rounded-3xl shadow-md p-8`}>
-                             <h3 className="font-playfair text-xl font-bold mb-4 flex items-center">
-                                <Stethoscope size={20} className={`mr-2 ${primaryColor}`} />
-                                Key Services Snapshot
-                            </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5">
-                                {doctorData.services.slice(0, 3).map((service, index) => (
-                                    <div key={index} className="flex items-start space-x-3">
-                                        <div className={`flex-shrink-0 w-6 h-6 rounded-full ${lightBgColor} ${primaryColor} flex items-center justify-center mt-1 border border-cyan-200`}>
-                                            <Droplet size={14}/>
-                                        </div>
-                                        <div>
-                                            <p className="font-raleway font-semibold text-gray-900 text-sm">{service.title}</p>
-                                        </div>
-                                    </div>
-                                ))}
+    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+        {/* LEFT COLUMN: BIO Content */}
+        <div className="lg:col-span-2 space-y-8 flex flex-col lg:h-full order-2 lg:order-1">
+
+            <div className={`bg-white rounded-3xl p-0 flex-grow`}>
+                <h2 className="font-playfair text-4xl font-extrabold mb-4">
+                    About Dr. Ghosh
+                </h2>
+                <p className={`font-raleway font-semibold text-xl text-gray-700 mb-6`}>
+                    {doctorData.introBio}
+                </p>
+                <p className="font-raleway text-base text-gray-700 leading-relaxed mb-4">
+                    {doctorData.mainBio[0]}
+                </p>
+                <p className="font-raleway text-base text-gray-700 leading-relaxed">
+                    {doctorData.mainBio[1]}
+                </p>
+            </div>
+
+            {/* Collaboration/Services Snapshot (Retained for detail) */}
+            <div className={`bg-gray-50 rounded-3xl shadow-md p-8`}>
+                   <h3 className="font-playfair text-xl font-bold mb-4 flex items-center">
+                       <Stethoscope size={20} className={`mr-2 ${primaryColor}`} />
+                       Key Services Snapshot
+                   </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5">
+                    {doctorData.services.slice(0, 3).map((service, index) => (
+                        <div key={index} className="flex items-start space-x-3">
+                            <div className={`flex-shrink-0 w-6 h-6 rounded-full ${lightBgColor} ${primaryColor} flex items-center justify-center mt-1 border border-cyan-200`}>
+                                <Droplet size={14}/>
+                            </div>
+                            <div>
+                                <p className="font-raleway font-semibold text-gray-900 text-sm">{service.title}</p>
                             </div>
                         </div>
-
-                    </div>
-                    
-                    {/* RIGHT COLUMN: PROFILE CARD (Now on the right) */}
-                    <div className={`lg:col-span-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col items-center order-1 lg:order-2 sticky top-4`}>
-                        
-                        {/* Profile Image Container */}
-                        <div className="relative w-full overflow-hidden h-[30vh] md:h-[40vh] lg:h-[40vh]">
-                            <img
-                                src={doctorImageFull}
-                                alt={`${doctorData.name} - ${doctorData.specialization}`}
-                                className="w-full h-full object-cover object-top filter grayscale contrast-125 shadow-lg"
-                                onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x300/333333/ffffff?text=Profile+Image"; }}
-                            />
-                        </div>
-                        
-                        {/* Contact Info & CTA (Below the image) */}
-                        <div className="text-center w-full p-6">
-                            <h3 className="font-playfair text-2xl font-bold mb-1">
-                                {doctorData.name}
-                            </h3>
-                            <p className={`font-raleway font-medium text-sm text-gray-500`}>
-                                {doctorData.specialization} | {doctorData.location}
-                            </p>
-                            <a href={APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" className={`font-raleway inline-flex items-center mt-6 ${accentBg} text-white font-semibold px-6 py-2 rounded-full shadow-md transition duration-300 ${accentHover} `}>
-                                Book Appointment <CalendarCheck size={18} className="ml-2" />
-                            </a>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
 
+        </div>
+
+        {/* RIGHT COLUMN: PROFILE CARD (Now on the right) */}
+        {/* Adjusted sticky top-4 to top-8 for a bit more spacing from the top */}
+        <div className={`lg:col-span-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col items-center order-1 lg:order-2 sticky top-8`}>
+
+            {/* Profile Image Container - INCREASED HEIGHT */}
+            {/* Changed height from h-[30vh] md:h-[40vh] lg:h-[40vh] to something taller */}
+            <div className="relative w-full overflow-hidden h-[40vh] md:h-[50vh] lg:h-[60vh]"> {/* Increased heights */}
+                <img
+                    src={doctorImageFull} // Ensure this variable points to your actual doctor image
+                    alt={`${doctorData.name} - ${doctorData.specialization}`}
+                    className="w-full h-full object-cover object-top filter grayscale contrast-125 shadow-lg" // object-cover ensures it fills the space
+                    // Removed onError for clarity, but you should keep it for production
+                    onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x500/333333/ffffff?text=Doctor+Profile"; }} // Updated placeholder size
+                />
+            </div>
+
+            {/* Contact Info & CTA (Below the image) */}
+            <div className="text-center w-full p-6">
+                <h3 className="font-playfair text-2xl font-bold mb-1">
+                    {doctorData.name}
+                </h3>
+                <p className={`font-raleway font-medium text-sm text-gray-500`}>
+                    {doctorData.specialization} | {doctorData.location}
+                </p>
+                <a href={APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" className={`font-raleway inline-flex items-center mt-6 ${accentBg} text-white font-semibold px-6 py-2 rounded-full shadow-md transition duration-300 ${accentHover} `}>
+                    Book Appointment <CalendarCheck size={18} className="ml-2" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
             {/* 4. Why Choose Me */}
             <section id="why-choose" className={`py-16 px-4 sm:px-8 lg:px-16 bg-gray-50`}>
                 <div className="max-w-7xl mx-auto">
