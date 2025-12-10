@@ -16,6 +16,7 @@ const APPOINTMENT_URL = "https://maatritvaivffertility.com/appointment";
 import doctorImage from './assets/profile_2.jpg';
 import doctorImageFull from './assets/profile_1.jpg'; // Using this for the full image in Section 4
 import doctorImage3 from './assets/profile_3.png'
+
 // --- DESIGN VARIABLES (Consistent Cyan/Navy Theme) ---
 const primaryColor = 'text-cyan-700'; // Darker cyan for main text elements
 const secondaryColor = 'text-cyan-500'; // Medium cyan for patterns/secondary text
@@ -27,7 +28,7 @@ const focusStatBorder = 'border-amber-500/80';
 
 // --- Updated Data for Dr. Prattay Ghosh (from content) ---
 const DOCTOR_NAME = "Dr. Prattay Ghosh";
-const SPECIALIZATION = "Diabetologist";
+const SPECIALIZATION = "Endocrinologist"; // Changed from Diabetologist
 const LOCATION = "Kolkata";
 
 const navLinks = [
@@ -43,20 +44,20 @@ const navLinks = [
 
 const doctorData = {
     name: "Dr. Prattay Ghosh",
-    specialization: "Trusted Diabetologist",
+    specialization: "Trusted Endocrinologist", // Changed
     location: "Kolkata",
     phone: "+917679944040",
     contactEmail: "drprattayghoshkol@gmail.com",
-    introBio: "Dr. Prattay Ghosh is your trusted diabetes doctor. The ultimate ‘Diabetologist Near Me’ for personalized diabetes management and overall health.",
+    introBio: "Dr. Prattay Ghosh is your trusted health partner. The ultimate ‘Metabolic Specialist Near Me’ for personalized sugar management and overall health.", // Changed
     mainBio: [
-        "Embark on a transformative journey of diabetes care with Dr. Prattay Ghosh, a highly regarded diabetologist in Kolkata. Recognized as the best diabetes doctor in Kolkata, Dr. Ghosh specializes in delivering personalized care tailored to various diabetes types, including type 1, type 2, and gestational diabetes.",
+        "Embark on a transformative journey of metabolic care with Dr. Prattay Ghosh, a highly regarded specialist in Kolkata. Recognized as the best endocrine doctor in Kolkata, Dr. Ghosh specializes in delivering personalized care tailored to various conditions, including chronic sugar imbalances, metabolic disorders, and gestational health issues.", // Changed
         "Dr. Prattay Ghosh, a leader in the field, employs advanced techniques like insulin pump therapy and continuous glucose monitoring (CGM) to craft precise treatment plans. His exceptional reputation is rooted in the positive experiences of over 10,000 satisfied patients who have benefited profoundly from his expert care.",
     ],
-    collaboration: "Collaborating with Dr. Ankita Mandal, Dr. Prattay Ghosh extends comprehensive diabetes care, even for expectant mothers dealing with gestational diabetes mellitus (GDM).",
+    collaboration: "Collaborating with Dr. Ankita Mandal, Dr. Prattay Ghosh extends comprehensive endocrine care, even for expectant mothers dealing with pregnancy-related sugar concerns (GDM).", // Changed
     services: [
         { title: "Body Composition and BMI Analysis", subtitle: "Understanding Your Health Body composition" },
-        { title: "Diabetes Management", subtitle: "Effective Diabetes Management Tips by Dr. Prattay Ghosh" },
-        { title: "Management of Complication of Diabetes", subtitle: "The Best Doctor for Management of Complications" },
+        { title: "Metabolic Health Management", subtitle: "Effective Sugar Control Tips by Dr. Prattay Ghosh" }, // Changed
+        { title: "Management of Chronic Complications", subtitle: "The Best Doctor for Management of Complications" }, // Changed
         { title: "Personalised Obesity Management", subtitle: "A More Effective Approach to Weight Loss" },
         { title: "Hypo/Hyperthyroidism", subtitle: "Treatment for two common thyroid disorders" },
         { title: "Thyroid & Parathyroid disorders Treatment", subtitle: "Typically involves medication, surgery, and management" },
@@ -65,14 +66,14 @@ const doctorData = {
         { degree: "MBBS", institution: "Reputed College in India", icon: GraduationCap },
         { degree: "MD (Medicine)", institution: "Reputed College in India", icon: GraduationCap },
         { degree: "PGDCC (Clinical Cardiology)", institution: "Apollo Hospital, Kolkata", icon: Heart },
-        { degree: "Post Graduate Diploma (Clinical Endocrinology and Diabetes)", institution: "Royal College of Physicians, UK", icon: Syringe },
-        { degree: "Advanced Training (Diabetes & Complications)", institution: "CMC Vellore", icon: Droplet },
+        { degree: "Post Graduate Diploma (Clinical Endocrinology)", institution: "Royal College of Physicians, UK", icon: Syringe }, // Changed
+        { degree: "Advanced Training (Metabolic Complications)", institution: "CMC Vellore", icon: Droplet }, // Changed
         { degree: "Advanced Training (Critical Care Medicine)", institution: "Reputed Institutions", icon: Activity },
     ],
     whyChoose: [
         { title: "Advanced Expertise", description: "Utilizing Insulin Pump Therapy and CGM for accurate and modern treatment plans.", icon: Zap },
         { title: "10K+ Satisfied Patients", description: "Proven track record with thousands of successful patient journeys in Kolkata.", icon: Users },
-        { title: "Holistic & Personalized Care", description: "Focus on patient education, support groups, and tailored treatment for all diabetes types.", icon: Heart },
+        { title: "Holistic & Personalized Care", description: "Focus on patient education, support groups, and tailored treatment for all metabolic types.", icon: Heart }, // Changed
     ]
 };
 
@@ -80,14 +81,14 @@ const doctorData = {
 const detailServices = [
     {
         icon: Droplet,
-        title: 'Diabetes Management',
-        description: "Personalized plans for Type 1, Type 2, and Gestational Diabetes, including advanced techniques like Insulin Pump Therapy.",
+        title: 'Sugar & Metabolic Management', // Changed
+        description: "Personalized plans for chronic sugar conditions, lifestyle-related imbalances, and Gestational care, including advanced techniques like Insulin Pump Therapy.", // Changed
         image: 'https://sunrisediagnosis.com/wp-content/uploads/2023/09/Sunrise-Diabetic-Management.jpg'
     },
     {
         icon: Activity,
         title: 'Complications Management',
-        description: "Expert care for complications like neuropathy, retinopathy, and diabetic foot ulcers to preserve long-term health and well-being.",
+        description: "Expert care for complications like neuropathy, retinopathy, and foot ulcers to preserve long-term health and well-being.", // Changed
         image: 'https://img.freepik.com/free-vector/diabetes-complications-treatment-medical-infographic-with-explicit-patient-symptoms-images-medication-icons-flat_1284-28996.jpg'
     },
     {
@@ -99,7 +100,7 @@ const detailServices = [
     {
         icon: Users,
         title: 'Education & Support',
-        description: "Prioritizing patient education and support, offering Diabetic Support Groups and knowledge to empower self-management.",
+        description: "Prioritizing patient education and support, offering Health Support Groups and knowledge to empower self-management.", // Changed
         image: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Esp_logo_2019.png'
     },
 ];
@@ -124,28 +125,28 @@ const testimonials = [
         id: 1,
         name: "Bi Bi",
         date: "2023-11-18",
-        quote: "Choosing Dr. Prattay Ghosh isn’t merely selecting a diabetologist; it’s inviting a guide into your health narrative. His consultations are not just appointments; they are chapters in a book where the main character is your well-being, and the plot revolves around managing diabetes in the vibrant backdrop of Kolkata.",
+        quote: "Choosing Dr. Prattay Ghosh isn’t merely selecting a doctor; it’s inviting a guide into your health narrative. His consultations are not just appointments; they are chapters in a book where the main character is your well-being, and the plot revolves around managing health in the vibrant backdrop of Kolkata.", // Changed
         image: "https://cdn-kgpnf.nitrocdn.com/DlGXXejZmkNpPPlMPtpDFJtaflBRBDcx/assets/desktop/optimized/rev-cb21f07/lh3.googleusercontent.com/a/ACg8ocIPbkaKPz4oKB2m1h7B1qdVQF8WwaIKF9-e2NcMCQXq=s120-c-rp-mo-br100"
     },
     {
         id: 2,
         name: "Rakesh Ghora",
         date: "2023-10-29",
-        quote: "Choosing Dr. Prattay Ghosh as my diabetes doctor in Kolkata was a life-changing decision. His tailored diet guidance has helped me lead a healthier lifestyle.",
+        quote: "Choosing Dr. Prattay Ghosh as my metabolic specialist in Kolkata was a life-changing decision. His tailored diet guidance has helped me lead a healthier lifestyle.", // Changed
         image: "https://cdn-kgpnf.nitrocdn.com/DlGXXejZmkNpPPlMPtpDFJtaflBRBDcx/assets/desktop/optimized/rev-cb21f07/lh3.googleusercontent.com/a/ACg8ocKrjjxikiSiF3Y246nKJQUrEtRznZwSYUUtryVGAgLb=s120-c-rp-mo-br100"
     },
     {
         id: 3,
         name: "Riju Mondal",
         date: "2023-10-21",
-        quote: "As a diabetes doctor in Kolkata, Dr. Ghosh's tailored diet guidance has helped me understand the importance of making healthier choices. His regular follow-ups over the phone reflect his dedication to patient well-being.",
+        quote: "As a health specialist in Kolkata, Dr. Ghosh's tailored diet guidance has helped me understand the importance of making healthier choices. His regular follow-ups over the phone reflect his dedication to patient well-being.", // Changed
         image: "https://cdn-kgpnf.nitrocdn.com/DlGXXejZmkNpPPlMPtpDFJtaflBRBDcx/assets/desktop/optimized/rev-cb21f07/lh3.googleusercontent.com/a-/ALV-UjV5StWWKyGDK0We3Q_U0bsmLf69JHZA7vneepcxAfCRtTE=s120-c-rp-mo-br100"
     },
     {
         id: 4,
         name: "bikhas Roy",
         date: "2023-08-20",
-        quote: "As a resident of Kolkata, I can confidently say that Dr. Prattay Ghosh is the best diabetologist in the city. His constant support and personalized approach have transformed my diabetes management.",
+        quote: "As a resident of Kolkata, I can confidently say that Dr. Prattay Ghosh is the best endocrinologist in the city. His constant support and personalized approach have transformed my health management.", // Changed
         image: "https://placehold.co/120x120/cccccc/333333?text=Bikhas+R" // Placeholder for extra review
     },
 ];
@@ -153,8 +154,8 @@ const testimonials = [
 // FAQ Data 
 const faqItems = [
     {
-        question: "What types of diabetes does Dr. Ghosh treat?",
-        answer: "Dr. Prattay Ghosh specializes in personalized care for various diabetes types, including Type 1, Type 2, and Gestational Diabetes Mellitus (GDM)."
+        question: "What types of conditions does Dr. Ghosh treat?", // Changed
+        answer: "Dr. Prattay Ghosh specializes in personalized care for various metabolic types, including Autoimmune conditions, Lifestyle-related sugar issues, and Gestational complications." // Changed
     },
     {
         question: "Does Dr. Ghosh use advanced technology in treatment?",
@@ -162,11 +163,11 @@ const faqItems = [
     },
     {
         question: "Where is Dr. Prattay Ghosh located in Kolkata?",
-        answer: "Dr. Ghosh provides expert care across Kolkata, including New Town, Salt Lake, Park Street, Behala, Garia, and Howrah, ensuring convenient access to specialist diabetology care."
+        answer: "Dr. Ghosh provides expert care across Kolkata, including New Town, Salt Lake, Park Street, Behala, Garia, and Howrah, ensuring convenient access to specialist care." // Changed
     },
     {
         question: "Are there support services available for patients?",
-        answer: "Yes, Dr. Ghosh strongly promotes patient education and support. Patients are encouraged to join a Diabetic Support Group to connect with a community and enhance their well-being journey."
+        answer: "Yes, Dr. Ghosh strongly promotes patient education and support. Patients are encouraged to join a Health Support Group to connect with a community and enhance their well-being journey." // Changed
     }
 ];
 
@@ -340,7 +341,7 @@ const ClinicsSection = () => (
                     <MapPin size={16} className="inline mr-2"/> 1st Floor, Axis Mall Multi Complex Area, 01-0184, Plot no.CF/9, Newtown, Kolkata, West Bengal 700107
                 </p>
                  <p className="font-raleway text-sm opacity-90 mb-4">
-                    <Clock size={16} className="inline mr-2"/> **Hours:** Open · Closes 11 pm
+                    <Clock size={16} className="inline mr-2"/> Closes 11 pm
                 </p>
                 <div className="flex justify-start space-x-4">
                     <a href="https://maatritvaivffertility.com/" target="_blank" rel="noopener noreferrer" className="bg-white text-cyan-700 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition flex items-center">
@@ -442,9 +443,9 @@ const App = () => {
             <Stethoscope size={64} strokeWidth={1} className="text-white opacity-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block" />
 
             <div className="relative z-10 text-center lg:text-right w-full">
-                {/* Text: Your Diabetes */}
+                {/* Text: Your Health */}
                 <h1 className="font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extralight text-white leading-none mb-2 mt-20 lg:mt-0">
-                    Your Diabetes
+                    Your Metabolic
                 </h1>
 
                 {/* Text: Dr. Prattay Ghosh */}
@@ -454,7 +455,7 @@ const App = () => {
 
                 {/* Text: Expert. */}
                 <h1 className={`font-playfair text-6xl sm:text-7xl lg:text-[7rem] font-extrabold text-white leading-none mb-4 lg:pt-0`}>
-                    Expert<span className={secondaryColor}>.</span>
+                    Health<span className={secondaryColor}>.</span>
                 </h1>
             </div>
         </div>
@@ -495,7 +496,7 @@ const App = () => {
                         <div className="flex items-center space-x-2 justify-center">
                             <Stethoscope size={20} className={primaryColor} />
                             <p className="text-gray-700 font-raleway text-base text-left">
-                                Personalized Type 1, 2, and Gestational Diabetes Care
+                                Personalized Metabolic and Hormonal Health Care
                             </p>
                         </div>
 
@@ -555,10 +556,10 @@ const App = () => {
 
             {/* Collaboration/Services Snapshot (Retained for detail) */}
             <div className={`bg-gray-50 rounded-3xl shadow-md p-8`}>
-                   <h3 className="font-playfair text-xl font-bold mb-4 flex items-center">
-                       <Stethoscope size={20} className={`mr-2 ${primaryColor}`} />
-                       Key Services Snapshot
-                   </h3>
+                    <h3 className="font-playfair text-xl font-bold mb-4 flex items-center">
+                        <Stethoscope size={20} className={`mr-2 ${primaryColor}`} />
+                        Key Services Snapshot
+                    </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5">
                     {doctorData.services.slice(0, 3).map((service, index) => (
                         <div key={index} className="flex items-start space-x-3">
@@ -614,7 +615,7 @@ const App = () => {
                             Your Health Partner
                         </p>
                         <h2 className="font-playfair text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-                            Why Choose Dr. Ghosh as Your <span className={primaryColor}>Diabetologist</span>?
+                            Why Choose Dr. Ghosh as Your <span className={primaryColor}>Specialist</span>?
                         </h2>
                     </div>
 
@@ -643,7 +644,7 @@ const App = () => {
                             Detailed <span className={primaryColor}>Qualifications</span> & Training
                         </h2>
                         <p className={`font-raleway text-lg text-gray-700 leading-relaxed`}>
-                            Dr. Ghosh's extensive education ensures the highest standard of care in Endocrinology and Diabetes.
+                            Dr. Ghosh's extensive education ensures the highest standard of care in Endocrinology and Metabolic Medicine.
                         </p>
                     </div>
 
@@ -679,7 +680,7 @@ const App = () => {
                             How I Can <span className={primaryColor}>Help You Thrive</span>
                         </h2>
                         <p className={`font-raleway text-lg text-gray-700 leading-relaxed`}>
-                            Optimizing Diabetes Health and Management - Your Top Choice for the **Best Diabetologist Near Me in Kolkata**.
+                            Optimizing Metabolic Health and Management - Your Top Choice for the **Best Endocrinologist Near Me in Kolkata**.
                         </p>
                     </div>
 
@@ -725,28 +726,28 @@ const App = () => {
                             My Comprehensive <span className={primaryColor}>Treatment Approach</span>
                         </h2>
                         <p className="font-raleway text-lg text-gray-700 leading-relaxed mb-6">
-                            I believe effective diabetes management goes beyond medication. It requires a partnership, deep understanding, and commitment to long-term well-being.
+                            I believe effective health management goes beyond medication. It requires a partnership, deep understanding, and commitment to long-term well-being.
                         </p>
                         <div className="space-y-5">
                             <div className="flex items-start space-x-4">
                                 <Lightbulb size={24} className={primaryColor + " flex-shrink-0 mt-1"} />
                                 <div>
                                     <h4 className="font-playfair font-bold text-gray-900">Education First</h4>
-                                    <p className="font-raleway text-gray-600 text-sm">Prioritizing diabetes education and support to empower you to actively manage your health.</p>
+                                    <p className="font-raleway text-gray-600 text-sm">Prioritizing health education and support to empower you to actively manage your well-being.</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
                                 <BookOpen size={24} className={primaryColor + " flex-shrink-0 mt-1"} />
                                 <div>
                                     <h4 className="font-playfair font-bold text-gray-900">Personalized Plans</h4>
-                                    <p className="font-raleway text-gray-600 text-sm">Crafting intricate treatment plans tailored to your specific diabetes type, lifestyle, and location.</p>
+                                    <p className="font-raleway text-gray-600 text-sm">Crafting intricate treatment plans tailored to your specific condition, lifestyle, and location.</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
                                 <Users size={24} className={primaryColor + " flex-shrink-0 mt-1"} />
                                 <div>
                                     <h4 className="font-playfair font-bold text-gray-900">Community Support</h4>
-                                    <p className="font-raleway text-gray-600 text-sm">Encouraging participation in Diabetic Support Groups for shared goals and enhanced emotional well-being.</p>
+                                    <p className="font-raleway text-gray-600 text-sm">Encouraging participation in Support Groups for shared goals and enhanced emotional well-being.</p>
                                 </div>
                             </div>
                         </div>
@@ -836,10 +837,10 @@ const App = () => {
             {/* Copyright Footer */}
             <div className="py-4 bg-gray-900 text-center text-gray-400">
                 <p className="font-raleway text-xs">
-                    © Best Diabetologist in Kolkata and Best Diabetes Doctor in Kolkata | {DOCTOR_NAME}. All Rights Reserved.
+                    © Best Endocrinologist in Kolkata and Best Metabolic Health Doctor in Kolkata | {DOCTOR_NAME}. All Rights Reserved.
                 </p>
                 <p className={`font-raleway text-xs mt-1 text-cyan-500 font-bold`}>
-                    Best diabetologist in Kolkata Dr.Prattay Ghosh
+                    Best health specialist in Kolkata Dr.Prattay Ghosh
                 </p>
             </div>
         </div>
